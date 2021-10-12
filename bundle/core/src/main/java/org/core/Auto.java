@@ -27,7 +27,7 @@ public class Auto implements HanggalRendelkezo {
 	private Valto valto;
 	private Kivitel kivitel;
 	private int ajtokSzama;
-
+	
 	@Override
 	public void dudal() {
 		System.out.println("Tütü");
@@ -125,10 +125,15 @@ public class Auto implements HanggalRendelkezo {
 		return ajtokSzama;
 	}
 
-	protected void setAjtokSzama(int ajtokSzama) {
+	public void setAjtokSzama(int ajtokSzama) throws AjtokSzamaNemMegfelelo {
+		if(ajtokSzama < 0 || ajtokSzama > 5){
+			throw new AjtokSzamaNemMegfelelo(ajtokSzama);
+		}
 		this.ajtokSzama = ajtokSzama;
 	}
 
+	public Auto() {};
+	
 	public Auto(String gyarto, String modell, String hengerurtartalom, String rendszam, Uzemanyag uzemanyag,
 			LocalDate gyartasiIdo, String szinHex, boolean korozott, String forgalmiSzama, Valto valto, Kivitel kivitel,
 			int ajtokSzama) {
