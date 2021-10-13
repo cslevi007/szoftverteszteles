@@ -1,4 +1,4 @@
-package org.core;
+package exception;
 
 public class AjtokSzamaNemMegfelelo extends Exception{
 	public AjtokSzamaNemMegfelelo(int ajtokSzama) {
